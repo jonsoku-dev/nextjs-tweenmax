@@ -1,0 +1,63 @@
+{
+  "git": {
+    "tagName": "v${version}",
+    "commit": true,
+    "tag": true,
+    "push": true,
+    "requireCleanWorkingDir": false,
+    "requireUpstream": false,
+    "requireCommits": true,
+    "commitMessage": "chore: release v${version}"
+  },
+  "npm": {
+    "publish": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release v${version}",
+    "tokenRef": "GITHUB_TOKEN"
+  },
+  "hooks": {
+    "before:init": ["yarn run lint", "yarn test"],
+    "after:git:release": "git checkout master && git merge develop && git push origin master && git checkout develop",
+    "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}."
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "infile": "CHANGELOG.md",
+      "preset": {
+        "name": "conventionalcommits",
+        "types": [
+          {
+            "type": "feat",
+            "section": "Features"
+          },
+          {
+            "type": "fix",
+            "section": "Bug Fixes"
+          },
+          {
+            "type": "docs",
+            "section": "Changes to the documentation"
+          },
+          {
+            "type": "style",
+            "section": "Formatting"
+          },
+          {
+            "type": "refactor",
+            "section": "Refactoring"
+          },
+          {
+            "type": "test",
+            "section": "Tests"
+          },
+          {
+            "type": "chore",
+            "section": "Updating grunt tasks"
+          }
+        ]
+      }
+    }
+  }
+}
