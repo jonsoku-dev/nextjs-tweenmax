@@ -4,7 +4,7 @@ import React from 'react'
 import Anchor from '@/components/atoms/Anchor'
 
 export default {
-  title: 'atoms/Anchor',
+  title: 'atoms/Index',
   component: Anchor,
   argTypes: {
     textColor: { control: 'color' },

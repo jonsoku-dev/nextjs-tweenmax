@@ -9,7 +9,7 @@ export interface AnchorProps {
    */
   href: string
   /**
-   * Anchor text
+   * Index text
    */
   text: string
   /**

@@ -1,16 +1,12 @@
 {
-  "presets": ["next/babel"],
+  "presets": [
+    "next/babel"
+  ],
   "plugins": [
     [
       "styled-components",
       {
         "ssr": true
-      }
-    ],
-    [
-      "transform-remove-console",
-      {
-        "exclude": ["error", "warn"]
       }
     ],
     [

@@ -7,7 +7,7 @@ import { ThemeProvider } from 'styled-components'
 import Anchor from '@/components/atoms/Anchor'
 import { defaultTheme } from '@/utils/theme'
 
-it('renders "Anchor"', () => {
+it('renders "Index"', () => {
   render(
     <ThemeProvider theme={defaultTheme}>
       <Anchor href={'https://naver.com'} text={'naver'} />

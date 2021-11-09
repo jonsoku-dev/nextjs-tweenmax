@@ -44,13 +44,13 @@ import { render, screen } from '@testing-library/react'
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
 
-import Anchor from '@/components/atoms/Anchor'
+import Index from '@/components/atoms/Index'
 import { theme } from '@/utils/theme'
 
-it('renders "Anchor"', () => {
+it('renders "Index"', () => {
   render(
     <ThemeProvider theme={theme}>
-      <Anchor href={'https://naver.com'} text={'naver'} />
+      <Index href={'https://naver.com'} text={'naver'} />
     </ThemeProvider>
   )
   const element = screen.getByText(/naver/)
